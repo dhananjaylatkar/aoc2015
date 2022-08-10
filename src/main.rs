@@ -22,8 +22,10 @@ fn main() {
     match args.day {
         0 => {
             sol::day_01::run();
+            sol::day_02::run();
         },
         1 => sol::day_01::run(),
+        2 => sol::day_02::run(),
         _ => println!("Solution not yet available for {}.", args.day),
     }
 }
