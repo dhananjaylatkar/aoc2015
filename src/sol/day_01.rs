@@ -56,8 +56,7 @@ fn part_1(input: &String) {
     for c in input.chars() {
         if c == '(' {
             floor += 1;
-        }
-        else {
+        } else {
             floor -= 1;
         }
     }
@@ -70,12 +69,11 @@ fn part_2(input: &String) {
     for (i, c) in input.chars().enumerate() {
         if c == '(' {
             floor += 1;
-        }
-        else {
+        } else {
             floor -= 1;
         }
         if floor == -1 {
-            first_neg = i+1;
+            first_neg = i + 1;
             break;
         }
     }

@@ -65,9 +65,9 @@ fn part_1_2(input: &Vec<String>) {
 }
 
 fn wrapping_paper(w: i32, h: i32, l: i32) -> i32 {
-    return 2*l*w + 3*w*h + 2*h*l;
+    return 2 * l * w + 3 * w * h + 2 * h * l;
 }
 
 fn ribbon_len(w: i32, h: i32, l: i32) -> i32 {
-    return 2*(w+h) + w*h*l;
+    return 2 * (w + h) + w * h * l;
 }

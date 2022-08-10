@@ -57,18 +57,21 @@ struct House {
 }
 fn part_1(input: &String) {
     let mut set = HashSet::new();
-    set.insert(House {x:0, y:0});
+    set.insert(House { x: 0, y: 0 });
 
-    let mut curr_house = House {x:0, y:0};
+    let mut curr_house = House { x: 0, y: 0 };
     for c in input.chars() {
         match c {
             '>' => curr_house.x += 1,
             '<' => curr_house.x -= 1,
             '^' => curr_house.y += 1,
             'v' => curr_house.y -= 1,
-            _   => {},
+            _ => {}
         }
-        set.insert(House {x:curr_house.x, y:curr_house.y});
+        set.insert(House {
+            x: curr_house.x,
+            y: curr_house.y,
+        });
     }
 
     let houses: usize = set.len();
@@ -78,30 +81,35 @@ fn part_1(input: &String) {
 
 fn part_2(input: &String) {
     let mut set = HashSet::new();
-    set.insert(House {x:0, y:0});
+    set.insert(House { x: 0, y: 0 });
 
-    let mut santa_house = House {x:0, y:0};
-    let mut robo_house = House {x:0, y:0};
+    let mut santa_house = House { x: 0, y: 0 };
+    let mut robo_house = House { x: 0, y: 0 };
     for (i, c) in input.chars().enumerate() {
-        if i%2 == 0 {
+        if i % 2 == 0 {
             match c {
                 '>' => santa_house.x += 1,
                 '<' => santa_house.x -= 1,
                 '^' => santa_house.y += 1,
                 'v' => santa_house.y -= 1,
-                _   => {},
+                _ => {}
             }
-            set.insert(House {x:santa_house.x, y:santa_house.y});
-        }
-        else {
+            set.insert(House {
+                x: santa_house.x,
+                y: santa_house.y,
+            });
+        } else {
             match c {
                 '>' => robo_house.x += 1,
                 '<' => robo_house.x -= 1,
                 '^' => robo_house.y += 1,
                 'v' => robo_house.y -= 1,
-                _   => {},
+                _ => {}
             }
-            set.insert(House {x:robo_house.x, y:robo_house.y});
+            set.insert(House {
+                x: robo_house.x,
+                y: robo_house.y,
+            });
         }
     }
 

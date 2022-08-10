@@ -6,9 +6,9 @@ mod sol;
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
 struct Args {
-   /// AoC Day [0 to 25 inclusive]. 0 for all Days.
-   #[clap(short, long, value_parser, default_value_t = 0)]
-   day: u8,
+    /// AoC Day [0 to 25 inclusive]. 0 for all Days.
+    #[clap(short, long, value_parser, default_value_t = 0)]
+    day: u8,
 }
 
 fn main() {
@@ -24,7 +24,7 @@ fn main() {
             sol::day_01::run();
             sol::day_02::run();
             sol::day_03::run();
-        },
+        }
         1 => sol::day_01::run(),
         2 => sol::day_02::run(),
         3 => sol::day_03::run(),
