@@ -79,7 +79,7 @@ fn part_2(input: &Vec<String>) {
         res += get_count_2(&line);
     }
 
-    println!("D08P1: {res}");
+    println!("D08P2: {res}");
 }
 
 fn get_count_1(s: &String) -> usize {
