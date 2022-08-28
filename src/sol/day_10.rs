@@ -31,10 +31,6 @@
   50 times. What is the length of the new result?
 */
 
-/***************************
- * Very Inefficient Solution, takes ~7mins.
- ***************************/
-
 use aoc2015::lines_from_file;
 
 pub fn run() {
@@ -43,7 +39,7 @@ pub fn run() {
 }
 
 fn part_1_2(input: &String) {
-    let mut res: String = input.to_string();
+    let mut res: Vec<u8> = input.bytes().map(|x| x - b'0').collect();
 
     for _ in 0..40 {
         res = helper(res);
@@ -56,22 +52,21 @@ fn part_1_2(input: &String) {
     println!("D10P2: {}", res.len());
 }
 
-fn helper(input: String) -> String {
-    let mut res: String = "".to_string();
-    let inp: Vec<char> = input.chars().collect();
+fn helper(input: Vec<u8>) -> Vec<u8> {
+    let mut res: Vec<u8> = Vec::<u8>::new();
 
     let mut i = 0;
-
-    while i < inp.len() {
-        let c = inp[i];
+    while i < input.len() {
+        let c = input[i];
         let mut count = 0;
 
-        while i < inp.len() && inp[i] == c {
+        while i < input.len() && input[i] == c {
             count += 1;
             i += 1;
         }
 
-        res = format!("{res}{count}{c}");
+        res.push(count);
+        res.push(c);
     }
     return res;
 }
