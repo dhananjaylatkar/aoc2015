@@ -30,6 +30,7 @@ fn main() {
             sol::day_07::run();
             sol::day_08::run();
             sol::day_09::run();
+            sol::day_10::run();
         }
         1 => sol::day_01::run(),
         2 => sol::day_02::run(),
@@ -40,6 +41,7 @@ fn main() {
         7 => sol::day_07::run(),
         8 => sol::day_08::run(),
         9 => sol::day_09::run(),
+        10 => sol::day_10::run(),
         _ => println!("Solution not yet available for {}.", args.day),
     }
 }
